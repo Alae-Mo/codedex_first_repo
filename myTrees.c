@@ -324,6 +324,11 @@ int main()
         case 10:
             printf("============Enregistrement de l'arbre dans un fichier============\n");
             f = fopen(file_path, "w");
+            if (f == NULL)
+            {
+                printf("Erreur d'ouverture de fichier\n");
+                return 0;
+            }
             enregistrerArbreFichier(rac, f);
             fclose(f);
             break;
@@ -331,6 +336,11 @@ int main()
         case 11:
             printf("============Créer un arbre depuis un fichier============\n");
             f = fopen(file_path, "r");
+            if (f == NULL)
+            {
+                printf("Erreur d'ouverture de fichier\n");
+                return 0;
+            }
             rac = NULL;
             initialiserArbreFichier(&rac, f);
             fclose(f);
