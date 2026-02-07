@@ -252,9 +252,10 @@ int main()
     char file_path[100] = "tree.txt";
     FILE *f;
 
-    int choix = menu();
+    int choix;
     do
     {
+        choix = menu();
         switch (choix)
         {
         case 1:
